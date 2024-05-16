@@ -1,8 +1,10 @@
 //Addbooks component
 import React, { useState } from 'react';
 import axios from 'axios';
+import Navbar from '../components/Navbar';
 
 function AddBook() {
+  
   const [book, setBook] = useState({
     title: '',
     author: '',
@@ -22,6 +24,8 @@ function AddBook() {
       const response = await axios.post('http://localhost:5000/api/add', book);
       console.log(response.data);
       // handle success (e.g., redirect to book list)
+      alert('Book added successfully');
+      window.location.reload();
     } catch (error) {
       console.error(error);
       // handle error
@@ -30,6 +34,8 @@ function AddBook() {
   
 
   return (
+    <>
+    <Navbar /> 
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -62,6 +68,7 @@ function AddBook() {
       {/* other inputs */}
       <button type="submit">Add Book</button>
     </form>
+    </>
   );
 }
 

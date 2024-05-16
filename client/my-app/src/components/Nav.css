@@ -1,73 +1,95 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Offcanvas styles for dark theme */
+.offcanvas {
+  background-color:  #fbfbff; /* Dark gray background */
+  color:#ffffff !important; /* White text color */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #1e1e1e;
+.offcanvas-header {
+  border-bottom: 1px solid #4e555b; /* Slightly lighter gray border for the header */
+  background-color: #04121e; /* Dark gray background for header */
+  padding: 1rem; /* Add some padding to the header */
 }
 
-/* Navbar base styles */
-.navbar {
-  background-color: #ffffff; /* White background */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px; /* Adjust padding for positioning */
-  font-size: 18px; /* Uniform font size */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+.offcanvas-title {
+  color:#ff2d55; /* White text color for the title */
+  font-size: 1.25rem; /* Increase the font size for the title */
+  font-weight: bold; /* Make the title bold */
 }
 
-/* Navbar brand/logo */
+.offcanvas-body {
+  padding: 1.5rem; /* Increase the padding for the body */
+  background-color: #04121e; /* Dark gray background for body */
+}
+
+/* Style for close button */
+.btn-close {
+  filter: invert(1); /* Invert color for the close button */
+  opacity: 0.8; /* Slightly reduce the opacity of the close button */
+}
+
+.btn-close:hover {
+  opacity: 1; /* Restore full opacity on hover */
+}
+
+/* Update existing styles for action buttons to match the dark theme */
+.action-button.signup,
+.action-button.signin {
+  background-color: #ff2d55; /* Dark gray background for buttons */
+  border-color: #6c757d; /* Dark gray border for buttons */
+  color: #ffffff; /* White text color for buttons */
+  margin-top: 1rem; /* Add more margin at the top */
+  width: 100%; /* Full width buttons */
+  padding: 0.75rem 1rem; /* Increase button padding */
+  font-size: 1rem; /* Increase button font size */
+  font-weight: bold; /* Make the buttons bold */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.action-button.signup:hover,
+.action-button.signin:hover {
+  background-color: #04121e; /* Slightly darker gray on hover */
+  border-color: #545b62; /* Slightly darker border on hover */
+}
+
+/* Ensure links are visible against the dark background */
+
+
+.nav-link, .navbar-dark .navbar-nav .nav-link {
+  color: #ffffff !important; /* White text color for links */
+  padding: 0.75rem 0; /* Add some padding to the links */
+  font-size: 1.1rem; /* Increase the font size of the links */
+  font-weight: 500; /* Medium font weight for the links */
+}
+
+.nav-link:hover, .navbar-dark .navbar-nav .nav-link:hover {
+  color: #ff2d55 !important; /* Orange color on hover */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+/* Style for Navbar Brand */
 .navbar-brand {
-  font-weight: bold;
-  color: #000000;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  gap: 0.5rem; /* Add space between icon and text */
 }
 
-/* Navigation links */
-.nav-link {
-  color: #000000; /* Black text for links */
-  text-decoration: none;
-  margin: 0 100px; /* Spacing between links */
-  font-weight: bold;
+.navbar-brand svg {
+  color: #ff2d55; /* Apply a color to the FontAwesome icon */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.nav-link:hover {
-  color: #0056b3; /* Blue color on hover */
+.navbar-brand:hover svg {
+  transform: scale(1.1); /* Slightly increase the size of the icon on hover */
 }
 
-/* Navbar scroll */
-.navbarScroll {
-  max-height: 60px; /* Adjusted max height for better appearance */
-  overflow-y: auto;
+.navbar-brand span {
+  color: #ffffff; /* White text color for the brand name */
+  font-size: 1.5rem; /* Increase the font size for the brand name */
+  font-weight: bold; /* Make the brand name bold */
 }
-
-/* Action buttons */
-.action-button {
-  background-color: #1e1e1e;
-  color: white;
-  padding: 8px 16px; /* Adjusted padding for buttons */
-  border: none;
-  cursor: pointer;
-  margin: 0 10px; 
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-.action-button:hover {
-  background-color: #a2aab3; /* Blue color on hover */
-}
-
-/* Book icon */
-.fa-book {
-  color: #0056b3; /* Blue color for the book icon */
-  margin-right: 8px; /* Adjusted space between the icon and text */
-}
-
-.fa-book:hover {
-  transform: scale(1.1); /* Slightly increase size on hover */
+/* Change the background color of the navigation bar */
+.container-fluid {
+  background-color:  #04121e; /* Replace with your desired color */
+  margin-top: -10px;
 }

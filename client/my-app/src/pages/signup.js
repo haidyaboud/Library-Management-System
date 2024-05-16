@@ -1,5 +1,6 @@
 import {useState}from 'react';
 import './signup.css'; // Import your CSS file
+import Navbar from '../components/Navbar';
 import React from "react";
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -22,6 +23,7 @@ const SignUpForm = () => {
 
   return (
     <>
+    <Navbar /> 
     <div className="background-image"> </div>
     <div className="loginBox">
     <form  onSubmit={handleSubmit}>

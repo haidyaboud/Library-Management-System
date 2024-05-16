@@ -1,46 +1,41 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-//import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import './Nav.css';
+import React, { useState } from 'react';
+import { Offcanvas, Navbar, Container, Nav, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import './Nav.css';
 
 function NavScrollExample() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-        <Navbar.Brand href="#">
-          <FontAwesomeIcon icon={faBook} /> Library
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Books</Nav.Link>
-            <Nav.Link href="#action2">About US</Nav.Link>
+    <>
+      <Navbar expand={false}>
+        <Container fluid>
+          <Navbar.Brand href="#">
+            <FontAwesomeIcon icon={faBook} /><span>Book Shop</span>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShow} />
+        </Container>
+      </Navbar>
+      <Offcanvas show={show} onHide={handleClose} placement="end">
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Menu</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <Nav className="justify-content-end flex-grow-1 pe-3">
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/ProductCard">Books</Nav.Link>
+            <Nav.Link as={Link} to="/AddBook">Add Books</Nav.Link>
           </Nav>
-          {/* <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search a Book"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button >Search</Button>
-          </Form> */}
-          {/* Action buttons */}
-          <Button as={Link} to="/signup" className="action-button">Sign Up</Button>
-          <Button  className="action-button">Sign In</Button>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+          <Button as={Link} to="/signup" className="action-button signup">Sign Up</Button>
+          <Button className="action-button signin">Sign In</Button>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
   );
 }
 

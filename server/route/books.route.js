@@ -27,4 +27,18 @@ router.get('/displaybooks', async (req, res) => {
   }
 });
 
+// PUT route to update an existing book
+const updateBook = async (id, newData) => {
+  try {
+    const response = await axios.put(`http://localhost:5000/api/update/${id}`, newData);
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+
+
 module.exports = router;

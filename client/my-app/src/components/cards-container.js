@@ -1,12 +1,13 @@
+// CardsContainer.js
 import React from 'react';
 import ProductCard from './ProductCard';
-import './cards.css';
+import './cardstyle.css';
 
-const CardsContainer = ({ products }) => {
+const CardsContainer = ({ products, onEdit, onDelete }) => {
   return (
-    <div className="cards-container">
+    <div className="container">
       {products.map((product, index) => (
-        <ProductCard key={index} {...product} />
+        <ProductCard key={index} {...product} onEdit={onEdit} onDelete={onDelete} />
       ))}
     </div>
   );
