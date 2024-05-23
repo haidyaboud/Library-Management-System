@@ -2,12 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter
 import './App.css';
 import Home from './pages/Home';
-import SignUp from './pages/signup';
-//import EditBook from './pages/EditBook';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import SignUp from './pages/signup'; // Ensure correct import path
 import AddBook from './pages/AddBook';
-
-
+import SignIn from './pages/signin';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -15,10 +13,10 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* Define other routes as needed */}
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
           <Route path="/AddBook" element={<AddBook />} />
-         
+          {/* Define other routes as needed */}
         </Routes>
       </div>
     </Router>

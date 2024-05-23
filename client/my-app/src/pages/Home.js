@@ -5,6 +5,7 @@ import Carousel from '../components/slider';
 //import Books from '../components/AddBook';
 import BooksList from '../components/BookList';
 import './home.css';
+// import Cardswithinfo from '../components/cardswithinfo';
 
 function Home() {
     return (
@@ -12,7 +13,7 @@ function Home() {
            <Navbar />
            <Carousel/>
            <BooksList/>
-
+           {/* <Cardswithinfo /> */}
         </div>
     );
 }

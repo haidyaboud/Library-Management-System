@@ -32,7 +32,7 @@ function NavScrollExample() {
             <Nav.Link as={Link} to="/AddBook">Add Books</Nav.Link>
           </Nav>
           <Button as={Link} to="/signup" className="action-button signup">Sign Up</Button>
-          <Button className="action-button signin">Sign In</Button>
+          <Button as={Link} to="/signin" className="action-button signin">Signin</Button>
         </Offcanvas.Body>
       </Offcanvas>
     </>
